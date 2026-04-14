@@ -16,19 +16,19 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Montserrat', sans-serif; line-height: 1.6; color: #333; overflow-x: hidden; scroll-behavior: smooth; }
 
-        /* --- NAVEGACIÓN (MENÚ LATERAL) --- */
+        /* --- BOTÓN Y MENÚ LATERAL --- */
         .menu-btn {
             position: fixed;
             top: 20px;
             left: 20px;
-            font-size: 30px;
+            font-size: 28px;
             color: var(--white);
             background: var(--primary-green);
-            padding: 5px 12px;
+            padding: 8px 12px;
             border-radius: 5px;
             cursor: pointer;
             z-index: 1100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
         .side-menu {
@@ -41,7 +41,7 @@
             color: white;
             transition: 0.4s;
             z-index: 1200;
-            padding: 80px 30px;
+            padding: 100px 30px;
         }
 
         .side-menu.active { left: 0; }
@@ -50,10 +50,12 @@
             display: block;
             color: white;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 25px;
             font-weight: 600;
             transition: 0.3s;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
         }
 
         .side-menu a:hover { color: var(--secondary-gold); }
@@ -64,12 +66,12 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.6);
             display: none;
             z-index: 1150;
         }
 
-        /* --- SECCIONES --- */
+        /* --- SECCIÓN HERO (FONDO BALDE) --- */
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/fondo-hero.jpg');
@@ -84,152 +86,161 @@
             padding: 20px;
         }
 
-        .hero img { max-width: 180px; margin-bottom: 20px; }
-
+        /* --- SECCIONES GENERALES --- */
         .section { padding: 80px 10% 60px; }
         .bg-light { background: #f4f4f4; }
-        h2 { color: var(--primary-green); margin-bottom: 30px; font-size: 2rem; }
+        h2 { color: var(--primary-green); margin-bottom: 30px; font-size: 2rem; position: relative; }
 
-        /* --- BIOGRAFÍA --- */
+        /* --- BIOGRAFÍA (INVENTOR) --- */
         .bio-container { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; }
         .bio-img { flex: 1; min-width: 300px; }
-        .bio-img img { width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-        .bio-text { flex: 1; min-width: 300px; }
+        .bio-img img { width: 100%; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .bio-text { flex: 1.5; min-width: 300px; }
 
-        /* --- PRODUCTO E IMPACTO --- */
-        .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
-        .impact-card { background: white; padding: 30px; border-radius: 10px; border-bottom: 4px solid var(--secondary-gold); text-align: center; }
+        /* --- IMPACTO --- */
+        .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; }
+        .impact-card { background: white; padding: 25px; border-radius: 10px; border-top: 5px solid var(--secondary-gold); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
 
-        /* --- GALERÍA --- */
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
-        .gallery-item { border-radius: 8px; overflow: hidden; position: relative; }
-        .gallery-item img { width: 100%; height: 250px; object-fit: cover; }
-        .gallery-item p { background: var(--primary-green); color: white; padding: 10px; font-size: 0.9rem; text-align: center; font-weight: bold; }
+        /* --- GALERÍA IMPLEMENTACIÓN --- */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
+        .gallery-item { border-radius: 12px; overflow: hidden; background: white; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .gallery-item img { width: 100%; height: 280px; object-fit: cover; }
+        .gallery-item p { background: #eee; padding: 12px; text-align: center; font-weight: bold; font-size: 0.9rem; }
 
         /* --- FORMULARIO --- */
-        .form-container { max-width: 600px; margin: 0 auto; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 8px; font-weight: bold; }
-        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; }
-        .btn-submit { background: var(--secondary-gold); color: white; border: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; font-size: 1.1rem; }
+        .form-box { max-width: 600px; margin: 0 auto; background: white; padding: 35px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 0.9rem; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-family: inherit; }
+        .btn-send { background: var(--primary-green); color: white; border: none; padding: 15px; width: 100%; font-weight: bold; cursor: pointer; border-radius: 8px; font-size: 1rem; transition: 0.3s; }
+        .btn-send:hover { background: #0c3d18; }
 
-        footer { background: var(--dark); color: white; padding: 40px; text-align: center; }
+        footer { background: var(--dark); color: white; padding: 40px; text-align: center; font-size: 0.9rem; }
 
-        @media (max-width: 768px) { .section { padding: 60px 5%; } }
+        @media (max-width: 768px) {
+            .section { padding: 60px 5%; }
+            .hero h1 { font-size: 2rem; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="menu-btn" onclick="toggleMenu()">&#9776;</div>
-    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
-    <div class="side-menu" id="side-menu">
-        <a href="#inicio" onclick="toggleMenu()">Inicio</a>
-        <a href="#biografia" onclick="toggleMenu()">Biografía</a>
-        <a href="#producto" onclick="toggleMenu()">Producto e Impacto</a>
-        <a href="#galeria" onclick="toggleMenu()">Implementación</a>
-        <a href="#contacto" onclick="toggleMenu()">Inversión / Contacto</a>
-    </div>
+    <div class="menu-btn" onclick="openNav()">&#9776;</div>
+    <div class="overlay" id="overlay" onclick="closeNav()"></div>
+    
+    <nav class="side-menu" id="mySidenav">
+        <a href="#inicio" onclick="closeNav()">Inicio</a>
+        <a href="#biografia" onclick="closeNav()">El Inventor</a>
+        <a href="#impacto" onclick="closeNav()">Producto e Impacto</a>
+        <a href="#galeria" onclick="closeNav()">Implementación</a>
+        <a href="#contacto" onclick="closeNav()">Inversión / Negocios</a>
+    </nav>
 
     <section id="inicio" class="hero">
-        <img src="images/logo-principal.jpg" alt="Logo Au Live">
-        <h1>AU LIVE</h1>
-        <p style="font-size: 1.3rem;">Ciencia Verde para la recuperación de oro fino</p>
+        <img src="images/logo-principal.jpg" alt="Logo Au Live" style="max-width: 150px; margin-bottom: 20px; border-radius: 10px;">
+        <h1 style="font-size: 2.5rem; letter-spacing: 2px;">AU LIVE</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9;">Ciencia Verde para una Minería Sostenible</p>
     </section>
 
     <section id="biografia" class="section">
-        <h2>El Inventor</h2>
+        <h2>Biografía del Inventor</h2>
         <div class="bio-container">
             <div class="bio-img">
                 <img src="images/perfil-inventor.jpg" alt="Carlos Mario Montoya">
             </div>
             <div class="bio-text">
-                <h3 style="color: var(--secondary-gold); margin-bottom: 15px;">Carlos Mario Montoya Vázquez</h3>
-                <p>Tecnólogo e inventor apasionado por la minería responsable. Su visión de eliminar el mercurio en la MAPE lo llevó a crear <strong>Au Live</strong>. Con años de investigación en campo, Carlos Mario ha desarrollado una solución que no solo es ecológica, sino técnicamente superior en eficiencia.</p>
+                <h3 style="color: var(--secondary-gold); margin-bottom: 10px;">Carlos Mario Montoya Vázquez</h3>
+                <p>Inventor y visionario con amplia trayectoria en el sector minero. Su compromiso con el medio ambiente lo llevó a desarrollar la tecnología <strong>Au Live</strong>, una solución técnica que elimina la dependencia del mercurio, permitiendo una extracción de oro eficiente, legal y segura para las comunidades.</p>
             </div>
         </div>
     </section>
 
-    <section id="producto" class="section bg-light">
-        <h2 style="text-align: center;">Nuestro Impacto</h2>
+    <section id="impacto" class="section bg-light">
+        <h2 style="text-align: center;">Acerca del Producto e Impacto</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">Au Live utiliza una matriz orgánica vegetal diseñada para capturar partículas de oro fino con una efectividad superior a los métodos tradicionales.</p>
         <div class="impact-grid">
             <div class="impact-card">
-                <h3 style="color: var(--primary-green);">94.3%</h3>
-                <p>Eficiencia en recuperación de oro fino libre.</p>
+                <h3 style="color: var(--primary-green);">Eficiencia</h3>
+                <p>Recuperación comprobada de hasta el 94.3% del oro fino.</p>
             </div>
             <div class="impact-card">
-                <h3 style="color: var(--primary-green);">100%</h3>
-                <p>Libre de Mercurio y químicos tóxicos.</p>
+                <h3 style="color: var(--primary-green);">Ecológico</h3>
+                <p>Sustituye al 100% el uso de mercurio y cianuro.</p>
             </div>
             <div class="impact-card">
-                <h3 style="color: var(--primary-green);">ESG</h3>
-                <p>Cumplimiento de estándares de sostenibilidad global.</p>
+                <h3 style="color: var(--primary-green);">Social</h3>
+                <p>Dignifica el trabajo del minero artesanal y MAPE.</p>
             </div>
         </div>
     </section>
 
     <section id="galeria" class="section">
-        <h2 style="text-align: center;">Implementación Paso a Paso</h2>
+        <h2 style="text-align: center;">Implementación de la Solución</h2>
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="images/paso1-textura.jpg">
+                <img src="images/paso1-textura.jpg" alt="Textura">
                 <p>1. Matriz Orgánica</p>
             </div>
             <div class="gallery-item">
-                <img src="images/paso2-aplicacion.jpg">
-                <p>2. Aplicación</p>
+                <img src="images/paso2-aplicacion.jpg" alt="Aplicación">
+                <p>2. Aplicación Técnica</p>
             </div>
             <div class="gallery-item">
-                <img src="images/paso3-proceso.jpg">
-                <p>3. Captura</p>
+                <img src="images/paso3-proceso.jpg" alt="Proceso">
+                <p>3. Captura y Lavado</p>
             </div>
             <div class="gallery-item">
-                <img src="images/paso4-resultado.jpg">
-                <p>4. Recuperación Final</p>
+                <img src="images/paso4-resultado.jpg" alt="Resultado">
+                <p>4. Resultado Final (Oro Puro)</p>
             </div>
         </div>
     </section>
 
     <section id="contacto" class="section bg-light">
-        <h2 style="text-align: center;">Inversión y Comercialización</h2>
-        <div class="form-container">
+        <h2 style="text-align: center;">Inversionistas y Comercialización</h2>
+        <div class="form-box">
             <form action="https://formspree.io/f/xgopgrgl" method="POST">
                 <div class="form-group">
                     <label>Nombre Completo</label>
                     <input type="text" name="nombre" required placeholder="Ej: Rafael Pérez">
                 </div>
                 <div class="form-group">
-                    <label>Email Corporativo</label>
+                    <label>Email de Contacto</label>
                     <input type="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label>Tipo de Interés</label>
-                    <select name="interes">
-                        <option value="Inversión">Oportunidad de Inversión</option>
-                        <option value="Comercialización">Distribución / Comercialización</option>
-                        <option value="Técnico">Asesoría Técnica</option>
+                    <label>Perfil de Interés</label>
+                    <select name="perfil">
+                        <option value="Inversionista">Quiero ser Inversionista</option>
+                        <option value="Comercializador">Quiero ser Comercializador</option>
+                        <option value="Cliente">Uso Técnico / Cliente</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label>Mensaje</label>
-                    <textarea name="mensaje" rows="4" placeholder="¿Cómo podemos colaborar?"></textarea>
+                    <textarea name="mensaje" rows="4"></textarea>
                 </div>
-                <button type="submit" class="btn-submit">Enviar Solicitud de Negocios</button>
+                <button type="submit" class="btn-send">Enviar Solicitud de Negocios</button>
             </form>
         </div>
     </section>
 
     <footer>
-        <p><strong>AU LIVE</strong> | Ciencia Verde Aplicada</p>
-        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">Tecnología Patentada por Carlos Mario Montoya V.</p>
+        <p><strong>AU LIVE</strong> - La Ciencia Verde de la Minería</p>
+        <p style="margin-top:10px; opacity:0.6;">© 2026 Tecnologia Patentada por Carlos Mario Montoya V.</p>
     </footer>
 
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById('side-menu');
-            const overlay = document.getElementById('overlay');
-            menu.classList.toggle('active');
-            overlay.style.display = menu.classList.contains('active') ? 'block' : 'none';
+        function openNav() {
+            document.getElementById("mySidenav").classList.add("active");
+            document.getElementById("overlay").style.display = "block";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").classList.remove("active");
+            document.getElementById("overlay").style.display = "none";
         }
     </script>
+
 </body>
-                    </html>
+    </html>
